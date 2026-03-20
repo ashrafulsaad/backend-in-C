@@ -16,7 +16,7 @@ struct Server server_constructor(int domain, int service, int protocol,unsigned 
     server.address.sin_port = htons(port);
     server.address.sin_addr.s_addr =htonl(netinterface);
     server.socket =socket(domain,service,protocol);
-    if(server.socket == 0){
+    if(server.socket < 0){
         perror("Failed to connnect socket...\n");
         exit(1);
     }
