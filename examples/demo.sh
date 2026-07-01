@@ -11,15 +11,15 @@ trap 'kill $SERVER_PID >/dev/null 2>&1 || true' EXIT
 sleep 1
 
 echo "=== Root page ==="
-curl -s http://127.0.0.1:8080/ | head -n 10
+curl -s http://127.0.0.1:18080/ | head -n 10
 
 echo
 
 echo "=== Health endpoint ==="
-curl -s http://127.0.0.1:8080/health
+curl -s http://127.0.0.1:18080/health
 
 echo
 
 echo "=== Echo endpoint ==="
-curl -s -X POST http://127.0.0.1:8080/api/echo -d 'hello=world'
+curl -s -X POST http://127.0.0.1:18080/api/echo -d 'hello=world'
 echo

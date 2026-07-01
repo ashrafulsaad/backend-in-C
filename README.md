@@ -25,6 +25,8 @@ A lightweight HTTP server built from scratch in C, without any external framewor
 
 ## Getting Started
 
+For a structured study guide, see [docs/user-guide.md](docs/user-guide.md).
+
 ### Prerequisites
 - GCC compiler
 - Linux / WSL
@@ -42,16 +44,21 @@ make
 
 ### Demo commands you can run
 ```bash
-curl http://127.0.0.1:8080/
-curl http://127.0.0.1:8080/health
-curl http://127.0.0.1:8080/db
-curl -X POST http://127.0.0.1:8080/api/echo -d 'hello=world'
+curl http://127.0.0.1:18080/
+curl http://127.0.0.1:18080/health
+curl http://127.0.0.1:18080/db
+curl -X POST http://127.0.0.1:18080/api/echo -d 'hello=world'
 ```
 
 ### Run parser test
 ```bash
 make parser-test
 ```
+
+## Learning path
+- Start with [docs/user-guide.md](docs/user-guide.md) for guided study.
+- Read [docs/architecture.md](docs/architecture.md) for module responsibilities.
+- Explore [src/core/server.c](src/core/server.c) and [src/http/http.c](src/http/http.c) to understand request flow.
 
 ## Author
 **Ashrafulsaad** — [GitHub](https://github.com/ashrafulsaad)

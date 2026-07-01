@@ -8,7 +8,7 @@ void launch(struct Server *server)
 
 int main(void)
 {
-    struct Server *server = server_constructor(AF_INET, SOCK_STREAM, 0, INADDR_ANY, 8080, 128, launch);
+    struct Server *server = server_constructor(AF_INET, SOCK_STREAM, 0, INADDR_ANY, 18080, 128, launch);
     if (!server) {
         return 1;
     }
