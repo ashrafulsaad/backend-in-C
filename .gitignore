@@ -1,3 +1,6 @@
 server
 *.o
 .vsocode/
+build/
+*.log
+/tests/test_http_parser

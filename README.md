@@ -1,20 +1,27 @@
-# Backend in c
+# Backend in C
 
 A lightweight HTTP server built from scratch in C, without any external frameworks.
 
 ## Features
 - Raw socket programming using POSIX APIs
-- Handles HTTP GET requests
-- Custom request parsing
-- Minimal and fast
+- Modular request parsing and response building
+- Middleware and routing pipeline
+- Threaded request handling
+- Basic benchmark and health endpoints
 
 ## Project Structure
-\`\`\`
+```text
 .
-├── server.c       # Main server logic
-├── server.h       # Header file
-└── test.c         # Test file
-\`\`\`
+├── Dockerfile
+├── Makefile
+├── README.md
+├── docs/
+├── examples/
+├── include/
+├── src/
+├── tests/
+└── server            # built binary
+```
 
 ## Getting Started
 
@@ -23,14 +30,19 @@ A lightweight HTTP server built from scratch in C, without any external framewor
 - Linux / WSL
 
 ### Build
-\`\`\`bash
-gcc server.c -o server
-\`\`\`
+```bash
+make
+```
 
 ### Run
-\`\`\`bash
+```bash
 ./server
-\`\`\`
+```
+
+### Run parser test
+```bash
+make parser-test
+```
 
 ## Author
 **Ashrafulsaad** — [GitHub](https://github.com/ashrafulsaad)
