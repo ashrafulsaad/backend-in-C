@@ -28,15 +28,24 @@ A lightweight HTTP server built from scratch in C, without any external framewor
 ### Prerequisites
 - GCC compiler
 - Linux / WSL
+- curl (for demo checks)
 
 ### Build
 ```bash
 make
 ```
 
-### Run
+### Run the demo server
 ```bash
 ./server
+```
+
+### Demo commands you can run
+```bash
+curl http://127.0.0.1:8080/
+curl http://127.0.0.1:8080/health
+curl http://127.0.0.1:8080/db
+curl -X POST http://127.0.0.1:8080/api/echo -d 'hello=world'
 ```
 
 ### Run parser test

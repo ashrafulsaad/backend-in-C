@@ -228,9 +228,14 @@ void route_home(struct Server *server, struct HttpRequest *request, struct HttpR
     server_set_status(response, 200, "OK");
     server_add_header(response, "Content-Type", "text/html");
     snprintf(response->body, sizeof(response->body),
-             "<html><body><h1>Reusable C HTTP Server</h1>"
-             "<p>Method: %s</p><p>Path: %s</p><p>Query: %s</p>"
-             "<p>Routes: /health, /db, /benchmark, /api/echo</p></body></html>",
+             "<!doctype html><html><head><meta charset='utf-8'><title>Reusable C HTTP Server</title>"
+             "<style>body{font-family:Arial,sans-serif;max-width:760px;margin:2rem auto;padding:1rem;line-height:1.6;}"
+             "code{background:#f4f4f4;padding:0.15rem 0.3rem;border-radius:4px;}</style></head><body>"
+             "<h1>Reusable C HTTP Server</h1><p>This server is built from scratch in C and demonstrates core backend concepts.</p>"
+             "<ul><li>POSIX sockets</li><li>HTTP parsing</li><li>Routing and middleware</li><li>Threaded request handling</li></ul>"
+             "<p><strong>Method:</strong> %s</p><p><strong>Path:</strong> %s</p><p><strong>Query:</strong> %s</p>"
+             "<p>Try: <code>/health</code>, <code>/db</code>, <code>/benchmark</code>, or <code>/api/echo</code></p>"
+             "</body></html>",
              request->method, request->path, request->query[0] ? request->query : "(none)");
     response->body_length = strlen(response->body);
 }
